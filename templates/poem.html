@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/poem.css">
+    <title>{{ poem_title }}</title>
+</head>
+<body>
+    <div class="source">
+        <h3 class="source_title">{{ source_title }}</h3>
+        <h4 class="poem_title">{{ poem_title }}</h4>
+        <div class="poem">
+            {% for stanza in stanzas %}
+                <div class="stanza">
+                    {% for line in stanza %}
+                    <div class="line">
+                        {% for word in line %}
+                            {% if word[0] %}
+                                <span class="italics">{{ word[1] }}</span>
+                            {% else %}
+                                <span>{{ word[1] }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

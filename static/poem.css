@@ -1,0 +1,15 @@
+body {
+    font-family: "Cormorant Garamond";
+}
+
+.source_title {
+    font-style: italic;
+}
+
+.poem_title {
+    text-transform: uppercase;
+}
+
+.italics {
+    font-style: italic;
+}
