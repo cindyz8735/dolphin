@@ -3,29 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/static/poem.css">
-    <title>{{ poem_title }}</title>
+    <title>{{ page_name }}</title>
 </head>
 <body>
-    <div class="source">
-        <h3 class="source_title">{{ source_title }}</h3>
-        <h4 class="poem_title">{{ poem_title }}</h4>
-        <div class="poem">
-            {% for stanza in stanzas %}
-                <div class="stanza">
-                    {% for line in stanza %}
-                    <div class="line">
-                        {% for word in line %}
-                            {% if word[0] %}
-                                <span class="italics">{{ word[1] }}</span>
-                            {% else %}
-                                <span>{{ word[1] }}</span>
-                            {% endif %}
+    {% for source in sources %}
+        <div class="source">
+            <h3 class="source_title">{{ source['title'] }}</h3>
+            <h4 class="poem_title">{{ source['poem_title'] }}</h4>
+            <div class="poem">
+                {% for stanza in source['stanzas'] %}
+                    <div class="stanza">
+                        {% for line in stanza %}
+                        <div class="line">
+                            {% for word in line %}
+                                {% if word[0] and word[1] %}
+                                    <span class="italics diff{{ word[1] }}">{{ word[2] }}</span>
+                                {% elif word[0] %}
+                                    <span class="italics">{{ word[2] }}</span>
+                                {% elif word[1] %}
+                                    <span class="diff{{ word[1] }}">{{ word[2] }}</span>
+                                {% else %}
+                                    <span>{{ word[2] }}</span>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                         {% endfor %}
                     </div>
-                    {% endfor %}
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-    </div>
+    {% endfor %}
 </body>
 </html>

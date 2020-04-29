@@ -2,6 +2,12 @@ body {
     font-family: "Cormorant Garamond";
 }
 
+.source {
+    float: left;
+    padding: 10px 30px;
+    display: block;
+}
+
 .source_title {
     font-style: italic;
 }
@@ -12,4 +18,16 @@ body {
 
 .italics {
     font-style: italic;
+}
+
+.diff1{
+    color: cornflowerblue;
+}
+
+.diff2 {
+    color: darkred;
+}
+
+.diff3 {
+    color: teal;
 }
