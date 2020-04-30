@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/static/poem.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script src="/static/main.js"></script>
     <title>{{ page_name }}</title>
 </head>
 <body>
@@ -17,11 +19,11 @@
                         <div class="line">
                             {% for word in line %}
                                 {% if word[0] and word[1] %}
-                                    <span class="italics diff{{ word[1] }}">{{ word[2] }}</span>
+                                    <span class="italics diff diff{{ word[1] }}">{{ word[2] }}</span>
                                 {% elif word[0] %}
                                     <span class="italics">{{ word[2] }}</span>
                                 {% elif word[1] %}
-                                    <span class="diff{{ word[1] }}">{{ word[2] }}</span>
+                                    <span class="diff diff{{ word[1] }}">{{ word[2] }}</span>
                                 {% else %}
                                     <span>{{ word[2] }}</span>
                                 {% endif %}
@@ -33,5 +35,13 @@
             </div>
         </div>
     {% endfor %}
+
+    <ul>View Differences
+        <button id="color-toggle">Toggle display of all colorings</button>
+        {% for diff in range(1, num_diffs+1) %}
+            <button class="diff-button" diff="{{ diff }}">Toggle display of difference {{ diff }}</button>
+        {% endfor %}
+    </ul>
+
 </body>
 </html>

@@ -1,5 +1,7 @@
 body {
     font-family: "Cormorant Garamond";
+    font-weight: 400;
+    color: black;
 }
 
 .source {
@@ -20,14 +22,30 @@ body {
     font-style: italic;
 }
 
-.diff1{
+.diff {
+    font-weight: 600;
+}
+
+.hide_colors {
+    color: black !important;
+}
+
+.color0 {
     color: cornflowerblue;
 }
 
-.diff2 {
+.color1 {
     color: darkred;
 }
 
-.diff3 {
+.color2 {
     color: teal;
+}
+
+.color3{
+    color: indigo;
+}
+
+.color4 {
+    color: mediumblue;
 }
