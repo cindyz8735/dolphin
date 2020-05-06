@@ -5,10 +5,19 @@ body {
 }
 
 footer {
-    width: 100%;
     position: fixed;
     bottom: 0;
-    padding: 20px;
+    right: 0;
+    margin: 20px;
+}
+
+footer a i {
+    color: black;
+}
+
+footer a {
+    float: right;
+    text-align: right;
 }
 
 ul {
