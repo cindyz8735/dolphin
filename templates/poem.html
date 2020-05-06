@@ -19,11 +19,11 @@
                         <div class="line">
                             {% for word in line %}
                                 {% if word[0] and word[1] %}
-                                    <span class="italics diff diff{{ word[1] }}">{{ word[2] }}</span>
+                                    <span class="italics diff diff{{ word[1] }} color{{ word[1]|int % 5}}">{{ word[2] }}</span>
                                 {% elif word[0] %}
                                     <span class="italics">{{ word[2] }}</span>
                                 {% elif word[1] %}
-                                    <span class="diff diff{{ word[1] }}">{{ word[2] }}</span>
+                                    <span class="diff diff{{ word[1] }} color{{ word[1]|int % 5 }}">{{ word[2] }}</span>
                                 {% else %}
                                     <span>{{ word[2] }}</span>
                                 {% endif %}
@@ -36,12 +36,14 @@
         </div>
     {% endfor %}
 
-    <ul>View Differences
-        <button id="color-toggle">Toggle display of all colorings</button>
-        {% for diff in range(1, num_diffs+1) %}
-            <button class="diff-button" diff="{{ diff }}">Toggle display of difference {{ diff }}</button>
-        {% endfor %}
-    </ul>
+    <div class="buttons">
+        <ul><h4>View Differences</h4>
+            <li><button id="color-toggle">Hide All Colors</button></li>
+            {% for diff in range(1, num_diffs+1) %}
+                <li><button class="diff-button" diff="{{ diff }}">Show Difference {{ diff }}</button></li>
+            {% endfor %}
+        </ul>
+    </div>
 
 </body>
 </html>

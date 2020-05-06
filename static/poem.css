@@ -4,10 +4,35 @@ body {
     color: black;
 }
 
+ul {
+    list-style-type: none;
+    font-weight: 500;
+}
+
 .source {
     float: left;
     padding: 10px 30px;
     display: block;
+    max-width: 30%;
+}
+
+.buttons {
+    padding: 10px 30px;
+    display: block;
+    float: right;
+}
+
+.buttons li {
+    padding: 5px 0px;
+}
+
+button {
+    padding: 5px;
+    font-family: inherit;
+    font-size: 10pt;
+    font-weight: 600;
+    background-color: gainsboro;
+    border: none;
 }
 
 .source_title {
@@ -35,7 +60,7 @@ body {
 }
 
 .color1 {
-    color: darkred;
+    color: crimson;
 }
 
 .color2 {
