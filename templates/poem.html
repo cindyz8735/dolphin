@@ -8,6 +8,7 @@
     <title>{{ page_name }}</title>
 </head>
 <body>
+    <div class="texts">
     {% for source in sources %}
         <div class="source">
             <h3 class="source_title">{{ source['title'] }}</h3>
@@ -19,11 +20,11 @@
                         <div class="line">
                             {% for word in line %}
                                 {% if word[0] and word[1] %}
-                                    <span class="italics diff diff{{ word[1] }} color{{ word[1]|int % 5}}">{{ word[2] }}</span>
+                                    <span class="italics diff diff{{ word[1] }} color{{ word[1]|int % 4}}">{{ word[2] }}</span>
                                 {% elif word[0] %}
                                     <span class="italics">{{ word[2] }}</span>
                                 {% elif word[1] %}
-                                    <span class="diff diff{{ word[1] }} color{{ word[1]|int % 5 }}">{{ word[2] }}</span>
+                                    <span class="diff diff{{ word[1] }} color{{ word[1]|int % 4 }}">{{ word[2] }}</span>
                                 {% else %}
                                     <span>{{ word[2] }}</span>
                                 {% endif %}
@@ -35,7 +36,7 @@
             </div>
         </div>
     {% endfor %}
-
+    </div>
     <div class="buttons">
         <ul><h4>View Differences</h4>
             <li><button id="color-toggle">Hide All Colors</button></li>
@@ -46,4 +47,7 @@
     </div>
 
 </body>
+<footer>
+    <button onclick="location.href='/'">Home</button>
+</footer>
 </html>

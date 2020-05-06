@@ -4,22 +4,47 @@ body {
     color: black;
 }
 
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 20px;
+}
+
 ul {
     list-style-type: none;
     font-weight: 500;
+    padding: 0;
+    margin-top: 0;
+}
+
+.texts {
+    width: 90%;
+    float: left;
 }
 
 .source {
     float: left;
-    padding: 10px 30px;
+    padding: 10px 20px;
     display: block;
     max-width: 30%;
+}
+
+.home {
+    padding: 20px;
+}
+
+.home h4 {
+    margin: 0;
+}
+
+.home p {
+    margin-top: 0;
 }
 
 .buttons {
     padding: 10px 30px;
     display: block;
-    float: right;
 }
 
 .buttons li {
@@ -71,6 +96,7 @@ button {
     color: indigo;
 }
 
-.color4 {
-    color: mediumblue;
+#poem-list {
+    font-weight: bold;
+    font-size: large;
 }

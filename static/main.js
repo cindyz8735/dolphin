@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-    const num_colors = 5;
-
     $('#color-toggle').click(function() {
         if ($(this).text() === "Show All Colors") {
             $('.diff').removeClass('hide_colors');

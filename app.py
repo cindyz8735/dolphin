@@ -9,7 +9,7 @@ def home_page():
 @app.route('/<file>')
 def display_poem(file):
     try:
-        with open(f'{file}.txt', 'r') as f:
+        with open(f'static/texts/{file}.txt', 'r') as f:
             full_text = f.read()
     except OSError:
         return render_template('index.html')
