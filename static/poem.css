@@ -1,23 +1,22 @@
 body {
-    font-family: "Cormorant Garamond";
+    font-family: "Garamond";
     font-weight: 400;
     color: black;
 }
 
 footer {
-    position: fixed;
     bottom: 0;
     right: 0;
     margin: 20px;
+    text-align: right;
+    float: right;
+    font-size: 90%;
+    font-style: italic;
 }
 
 footer a i {
     color: black;
-}
-
-footer a {
-    float: right;
-    text-align: right;
+    padding-left: 10px;
 }
 
 ul {
@@ -30,6 +29,7 @@ ul {
 .texts {
     width: 90%;
     float: left;
+    display: flex;
 }
 
 .source {
@@ -53,7 +53,7 @@ ul {
 
 .buttons {
     padding: 10px 30px;
-    display: block;
+    display: flex;
 }
 
 .buttons li {
